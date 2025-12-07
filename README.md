@@ -14,7 +14,6 @@ Simulation logs and plots (in output/)
 PyTorch Lightning logs (in lightning_logs/)  
 ISLM_QQSS_NOTES.md (in docs/)  
 paper.pdf (in docs/ssrn/)  
-.gitignore  
 README.md  
 
 This listing avoids tree-format folders so that GitHub renders consistently.
@@ -74,6 +73,9 @@ Y, r = islm.solve_equilibrium(G_eff=G_eff, ...)
 ```
 
 ---
+<img width="2662" height="1764" alt="islm_equilibrium" src="https://github.com/user-attachments/assets/dde46ce9-c352-4564-b5be-0f6307371900" />
+
+
 
 ## License
 MIT License (recommended for open-source academic use).
