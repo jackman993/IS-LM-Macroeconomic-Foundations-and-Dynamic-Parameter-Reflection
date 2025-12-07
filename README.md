@@ -128,27 +128,32 @@ shock → zₜ → G_eff → IS–LM → (Yₜ, rₜ)
 
 This version is conceptual and intended for research iteration.
 
-📂 Folder Structure
+## 📂 Folder Structure
+
 ISLM_v02/
 │
 ├── src/
-│   ├── ISLMMode.py
-│   ├── ISLMqqss_module.py
-│   ├── ISLMdata_generator.py
-│   ├── ISLMtrain.py
-│   ├── simulate_islm_equilibrium.py
-│   └── models/
-│       └── islm_neurocore_model.ckpt
+│ ├── ISLMMode.py
+│ ├── ISLMqqss_module.py
+│ ├── ISLMdata_generator.py
+│ ├── ISLMtrain.py
+│ ├── simulate_islm_equilibrium.py
+│ └── models/
+│ └── islm_neurocore_model.ckpt
 │
-├── output/                # Simulation logs, plots, intermediate results
-├── lightning_logs/        # PyTorch Lightning training logs
+├── output/ # Simulation logs, plots, results
+├── lightning_logs/ # PyTorch Lightning logs
+│
 ├── docs/
-│   ├── ISLM_QQSS_NOTES.md
-│   └── ssrn/
-│       └── paper.pdf
+│ ├── ISLM_QQSS_NOTES.md
+│ └── ssrn/
+│ └── paper.pdf
 │
 ├── README.md
 └── .gitignore
+
+go
+複製程式碼
 
 📘 Prototype Status
 ✔ Completed
