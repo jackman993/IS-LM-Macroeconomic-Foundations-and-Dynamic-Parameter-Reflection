@@ -79,7 +79,10 @@ ISLM_v02/
 ├── lightning_logs/        # PyTorch Lightning training logs
 │
 ├── docs/
-│   ├── ISLM_QQSS_NOTES.md📘 Prototype Status
+│   ├── ISLM_QQSS_NOTES.md
+
+
+📘 Prototype Status
 ✔ Completed
 
 Analytic IS–LM core with closed-form solution
