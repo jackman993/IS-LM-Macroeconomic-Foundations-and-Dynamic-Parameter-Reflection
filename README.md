@@ -78,6 +78,27 @@ Y, r = islm.solve_equilibrium(G_eff=G_eff, ...)
 ## License
 MIT License (recommended for open-source academic use).
 
-## Citation
-A CITATION.cff file can be added for DOI and ORCID integration.
+## Citation (Draft)
+
+If you use this dataset or pipeline, please cite:
+
+**Wu C.-H. (2025). _BRCA-Multi: A Mini Multi-Omics Benchmark Dataset for Methodological Prototyping._**  
+https://orcid.org/0009-0001-3396-6835  
+
+(Will update after DOI is issued)
+
+---
+
+## License
+
+Open Data Commons (ODC-By) license for dataset.  
+MIT license for software code.
+
+---
+
+## Maintainer
+
+Chi-Hsing Wu  
+TaiScience Research Group  
+https://www.taiscience.org
 
