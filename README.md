@@ -1,59 +1,44 @@
 # ISLM_v02: Analytic IS–LM Model, Neural Approximation, and QQSS Dynamic Shock Prototype
 
-This repository contains Prototype 0.1 of an IS–LM analytic equilibrium solver, a neural surrogate model, and an experimental four-state QQSS dynamic shock module.  
-The system serves as a conceptual testbed for dynamic parameter reflection and macroeconomic simulation.
+This repository contains Prototype 0.1 of an IS–LM analytic equilibrium solver, a neural surrogate model, and an experimental QQSS four-state dynamic shock module. The system is intended as a conceptual testbed for dynamic parameter reflection and macroeconomic simulation.
 
----
+## Files Included
 
-## Overview
+ISLMMode.py  
+ISLMqqss_module.py  
+ISLMdata_generator.py  
+ISLMtrain.py  
+simulate_islm_equilibrium.py  
+islm_neurocore_model.ckpt (in models/)  
+Simulation logs and plots (in output/)  
+PyTorch Lightning logs (in lightning_logs/)  
+ISLM_QQSS_NOTES.md (in docs/)  
+paper.pdf (in docs/ssrn/)  
+.gitignore  
+README.md  
 
-This prototype system includes:
+This listing avoids tree-format folders so that GitHub renders consistently.
 
-### 1. Analytic IS–LM Equilibrium Solver
-A closed-form solver that computes simultaneous equilibrium (Y, r) based on fiscal and monetary parameters.  
-Used as the ground-truth generator for surrogate training.
+## Prototype Status
 
-### 2. Neural Surrogate Model (ISLM NeuroCore)
-A trained neural network mapping:
-(G, T, M, P) → (Y, r)
+### Completed
+- Analytic IS–LM model with closed-form equilibrium.  
+- Data generator for supervised learning.  
+- Neural surrogate model (trained checkpoint included).  
+- QQSS four-state dynamic module.  
+- End-to-end simulation pipeline executes without errors.
 
-Useful for embedding the IS–LM mechanism into larger dynamic systems without repeatedly solving the analytic form.
+### Current Limitations
+- QQSS is over-damped and does not generate oscillatory macro cycles.  
+- Coupling from QQSS states to policy variables is intentionally weak.  
+- Parameters have not been calibrated for realistic macroeconomic behavior.  
+- Not intended for empirical or policy evaluation in the current form.
 
-### 3. QQSS Dynamic Shock Module (Prototype 0.1)
-A four-state dynamical system that reacts to external shocks and produces reflected fiscal parameters.  
-Currently generates small, over-damped perturbations and weak coupling to macro variables.
-
-### 4. End-to-End Pipeline
-shock → QQSS state → effective fiscal variables → IS–LM equilibrium
-
----
-
-## Prototype Status (Completed)
-
-- Analytic IS–LM model with closed-form equilibrium  
-- Training data generator for supervised learning  
-- Trained neural surrogate model included  
-- Four-state QQSS dynamic module  
-- End-to-end simulation pipeline executes without errors  
-
----
-
-## Current Limitations
-
-- QQSS dynamics are over-damped and do not generate oscillatory cycles  
-- Weak mapping from QQSS states to fiscal/monetary parameters  
-- Parameters not yet calibrated for realistic macroeconomic behavior  
-- Not intended for policy or empirical analysis in current form  
-
----
-
-## Future Directions
-
-- Introduce complex eigenvalues to produce stable oscillatory macro-dynamics  
-- Strengthen QQSS → (G, T, M, P) coupling  
-- Interpret each QQSS channel as an economic factor  
-  (expectation shock, external demand, financial stress, policy noise)  
-- Target behavior: 3–5% Y deviation from a moderate single shock  
+### Future Directions
+- Introduce complex eigenvalues to produce stable oscillations.  
+- Strengthen QQSS-to-policy mappings.  
+- Map QQSS channels to interpretable macroeconomic forces.  
+- Target behavior: moderate shocks should cause 3–5% movements in output with stable interest-rate variation.
 
 ---
 
@@ -62,17 +47,20 @@ shock → QQSS state → effective fiscal variables → IS–LM equilibrium
 ### 1. Run analytic IS–LM simulation
 ```bash
 python simulate_islm_equilibrium.py
-2. Generate training data
-bash
-複製程式碼
+```
+
+### 2. Generate training data
+```bash
 python ISLMdata_generator.py
-3. Train the neural surrogate
-bash
-複製程式碼
+```
+
+### 3. Train the neural surrogate
+```bash
 python ISLMtrain.py
-4. Example usage: QQSS + IS–LM
-python
-複製程式碼
+```
+
+### 4. Example usage: QQSS + IS–LM
+```python
 from ISLMMode import ISLMModel
 from ISLMqqss_module import QQSSModule
 
@@ -83,12 +71,13 @@ z = qqss.step(shock=1.0)
 G_eff = base_G + qqss.to_G_eff(z)
 
 Y, r = islm.solve_equilibrium(G_eff=G_eff, ...)
-License
-MIT License (recommended for open-source and academic use)
+```
 
-Citation
-A CITATION.cff file may be added for Zenodo DOI and ORCID integration.
+---
 
-Suggested citation:
+## License
+MIT License (recommended for open-source academic use).
 
-ISLM_v02: Analytic IS–LM Model with Neural Approximation and QQSS Dynamic Shock Prototype. GitHub, 2025.
+## Citation
+A CITATION.cff file can be added for DOI and ORCID integration.
+
