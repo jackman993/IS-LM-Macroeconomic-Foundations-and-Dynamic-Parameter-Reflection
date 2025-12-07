@@ -59,8 +59,6 @@ G_{\text{eff}} = G + f(z_t)
 
 This version is conceptual and intended for further calibration.
 
----
-
 ## 📂 Folder Structure
 
 ```text
@@ -80,6 +78,14 @@ ISLM_v02/
 │
 ├── docs/
 │   ├── ISLM_QQSS_NOTES.md
+│   └── ssrn/
+│       └── paper.pdf
+│
+├── README.md
+└── .gitignore
+
+
+
 
 
 ## 📘 Prototype Status
