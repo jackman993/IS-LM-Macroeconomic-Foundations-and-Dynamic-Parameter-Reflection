@@ -82,7 +82,7 @@ ISLM_v02/
 │   ├── ISLM_QQSS_NOTES.md
 
 
-📘 Prototype Status
+# 📘 Prototype Status
 ✔ Completed
 
 Analytic IS–LM core with closed-form solution
